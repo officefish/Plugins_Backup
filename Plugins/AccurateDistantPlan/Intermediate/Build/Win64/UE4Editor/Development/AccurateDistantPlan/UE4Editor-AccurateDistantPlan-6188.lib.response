@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-AccurateDistantPlan-6188.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\UnrealProjects\RTSGame\Intermediate\Build\Win64\RTSGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Intermediate\Build\Win64\UE4Editor\Development\AccurateDistantPlan\DistantPlanActor.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Intermediate\Build\Win64\UE4Editor\Development\AccurateDistantPlan\LandscapeFragment.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Intermediate\Build\Win64\UE4Editor\Development\AccurateDistantPlan\Module.AccurateDistantPlan.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Intermediate\Build\Win64\UE4Editor\Development\AccurateDistantPlan\Module.AccurateDistantPlan.gen.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Intermediate\Build\Win64\UE4Editor\Development\AccurateDistantPlan\Default.rc2.res"
+/OUT:"D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Intermediate\Build\Win64\UE4Editor\Development\AccurateDistantPlan\UE4Editor-AccurateDistantPlan-6188.lib"

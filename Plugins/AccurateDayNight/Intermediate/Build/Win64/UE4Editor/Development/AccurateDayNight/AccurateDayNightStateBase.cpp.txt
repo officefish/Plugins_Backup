@@ -1,0 +1,9 @@
+D:\UnrealProjects\RTSGame\Plugins\AccurateDayNight\Intermediate\Build\Win64\UE4Editor\Development\AccurateDayNight\Definitions.AccurateDayNight.h
+D:\UnrealProjects\RTSGame\Plugins\AccurateDayNight\Source\AccurateDayNight\Public\AccurateDayNightStateBase.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameStateBase.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameStateBase.generated.h
+D:\UnrealProjects\RTSGame\Plugins\AccurateDayNight\Intermediate\Build\Win64\UE4Editor\Inc\AccurateDayNight\AccurateDayNightStateBase.generated.h

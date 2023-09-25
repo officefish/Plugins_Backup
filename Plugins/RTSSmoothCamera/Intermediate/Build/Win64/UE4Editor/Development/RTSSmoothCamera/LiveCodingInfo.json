@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RTSSmoothCamera.cpp.obj": [
+			"RTSSmoothCamera.cpp.obj",
+			"RTSSmoothCameraComponent.cpp.obj",
+			"RTSSmoothCameraPawn.cpp.obj"
+		],
+		"Module.RTSSmoothCamera.gen.cpp.obj": [
+			"RTSSmoothCamera.init.gen.cpp.obj",
+			"RTSSmoothCameraComponent.gen.cpp.obj",
+			"RTSSmoothCameraPawn.gen.cpp.obj"
+		]
+	}
+}

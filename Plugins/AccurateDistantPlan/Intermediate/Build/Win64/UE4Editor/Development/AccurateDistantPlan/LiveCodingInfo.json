@@ -1,0 +1,17 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.AccurateDistantPlan.cpp.obj": [
+			"AccurateDistantPlan.cpp.obj",
+			"LandscapeFragment.cpp.obj",
+			"DistantPlanActor.cpp.obj",
+			"SeasonLandscapeFragment.cpp.obj"
+		],
+		"Module.AccurateDistantPlan.gen.cpp.obj": [
+			"AccurateDistantPlan.init.gen.cpp.obj",
+			"DistantPlanActor.gen.cpp.obj",
+			"LandscapeFragment.gen.cpp.obj",
+			"SeasonLandscapeFragment.gen.cpp.obj"
+		]
+	}
+}

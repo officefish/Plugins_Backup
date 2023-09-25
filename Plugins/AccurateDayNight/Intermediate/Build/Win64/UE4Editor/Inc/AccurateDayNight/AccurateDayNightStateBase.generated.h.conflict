@@ -1,0 +1,95 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+#ifdef ACCURATEDAYNIGHT_AccurateDayNightStateBase_generated_h
+#error "AccurateDayNightStateBase.generated.h already included, missing '#pragma once' in AccurateDayNightStateBase.h"
+#endif
+#define ACCURATEDAYNIGHT_AccurateDayNightStateBase_generated_h
+
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_SPARSE_DATA
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_RPC_WRAPPERS
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesAAccurateDayNightStateBase(); \
+	friend struct Z_Construct_UClass_AAccurateDayNightStateBase_Statics; \
+public: \
+	DECLARE_CLASS(AAccurateDayNightStateBase, AGameStateBase, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/AccurateDayNight"), NO_API) \
+	DECLARE_SERIALIZER(AAccurateDayNightStateBase)
+
+
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_INCLASS \
+private: \
+	static void StaticRegisterNativesAAccurateDayNightStateBase(); \
+	friend struct Z_Construct_UClass_AAccurateDayNightStateBase_Statics; \
+public: \
+	DECLARE_CLASS(AAccurateDayNightStateBase, AGameStateBase, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/AccurateDayNight"), NO_API) \
+	DECLARE_SERIALIZER(AAccurateDayNightStateBase)
+
+
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API AAccurateDayNightStateBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AAccurateDayNightStateBase) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AAccurateDayNightStateBase); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AAccurateDayNightStateBase); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API AAccurateDayNightStateBase(AAccurateDayNightStateBase&&); \
+	NO_API AAccurateDayNightStateBase(const AAccurateDayNightStateBase&); \
+public:
+
+
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API AAccurateDayNightStateBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API AAccurateDayNightStateBase(AAccurateDayNightStateBase&&); \
+	NO_API AAccurateDayNightStateBase(const AAccurateDayNightStateBase&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AAccurateDayNightStateBase); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AAccurateDayNightStateBase); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AAccurateDayNightStateBase)
+
+
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_PRIVATE_PROPERTY_OFFSET
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_12_PROLOG
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_SPARSE_DATA \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_RPC_WRAPPERS \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_INCLASS \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_SPARSE_DATA \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_INCLASS_NO_PURE_DECLS \
+	RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h_15_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> ACCURATEDAYNIGHT_API UClass* StaticClass<class AAccurateDayNightStateBase>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID RTSGame_Plugins_AccurateDayNight_Source_AccurateDayNight_Public_AccurateDayNightStateBase_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

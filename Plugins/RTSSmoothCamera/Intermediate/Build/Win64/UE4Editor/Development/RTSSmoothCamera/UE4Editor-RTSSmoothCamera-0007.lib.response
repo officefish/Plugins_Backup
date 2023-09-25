@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-RTSSmoothCamera-0007.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\UnrealProjects\RTSGame\Intermediate\Build\Win64\RTSGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\UnrealProjects\RTSGame\Plugins\RTSSmoothCamera\Intermediate\Build\Win64\UE4Editor\Development\RTSSmoothCamera\Module.RTSSmoothCamera.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\RTSSmoothCamera\Intermediate\Build\Win64\UE4Editor\Development\RTSSmoothCamera\Module.RTSSmoothCamera.gen.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\RTSSmoothCamera\Intermediate\Build\Win64\UE4Editor\Development\RTSSmoothCamera\Default.rc2.res"
+/OUT:"D:\UnrealProjects\RTSGame\Plugins\RTSSmoothCamera\Intermediate\Build\Win64\UE4Editor\Development\RTSSmoothCamera\UE4Editor-RTSSmoothCamera-0007.lib"

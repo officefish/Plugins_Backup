@@ -1,0 +1,2 @@
+D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Intermediate\Build\Win64\UE4Editor\Development\AccurateDistantPlan\Definitions.AccurateDistantPlan.h
+D:\UnrealProjects\RTSGame\Plugins\AccurateDistantPlan\Source\AccurateDistantPlan\Public\AccurateDistantPlan.h

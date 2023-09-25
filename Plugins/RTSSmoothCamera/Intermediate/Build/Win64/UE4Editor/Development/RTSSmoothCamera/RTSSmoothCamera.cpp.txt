@@ -1,0 +1,2 @@
+D:\UnrealProjects\RTSGame\Plugins\RTSSmoothCamera\Intermediate\Build\Win64\UE4Editor\Development\RTSSmoothCamera\Definitions.RTSSmoothCamera.h
+D:\UnrealProjects\RTSGame\Plugins\RTSSmoothCamera\Source\RTSSmoothCamera\Public\RTSSmoothCamera.h

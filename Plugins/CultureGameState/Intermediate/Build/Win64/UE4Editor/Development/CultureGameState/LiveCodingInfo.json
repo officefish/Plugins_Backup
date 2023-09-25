@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.CultureGameState.cpp.obj": [
+			"CultureGameState.cpp.obj",
+			"CultureGameStateBase.cpp.obj"
+		],
+		"Module.CultureGameState.gen.cpp.obj": [
+			"CultureGameState.init.gen.cpp.obj",
+			"CultureGameStateBase.gen.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.AccurateConstruction.cpp.obj": [
+			"AccurateConstruction.cpp.obj",
+			"BuildingMaster.cpp.obj",
+			"ConstructionManager.cpp.obj",
+			"ConstructionProxy.cpp.obj",
+			"GhostBuilding.cpp.obj"
+		],
+		"Module.AccurateConstruction.gen.cpp.obj": [
+			"AccurateConstruction.init.gen.cpp.obj",
+			"BuildingMaster.gen.cpp.obj",
+			"ConstructionManager.gen.cpp.obj",
+			"ConstructionProxy.gen.cpp.obj",
+			"GhostBuilding.gen.cpp.obj"
+		]
+	}
+}

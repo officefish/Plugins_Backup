@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-AccurateConstruction.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\UnrealProjects\RTSGame\Intermediate\Build\Win64\RTSGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Module.AccurateConstruction.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Module.AccurateConstruction.gen.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Default.rc2.res"
+/OUT:"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\UE4Editor-AccurateConstruction.lib"
