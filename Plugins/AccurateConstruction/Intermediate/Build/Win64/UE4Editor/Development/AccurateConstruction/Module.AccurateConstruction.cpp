@@ -3,4 +3,3 @@
 #include "D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Source/AccurateConstruction/Private/BuildingMaster.cpp"
 #include "D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Source/AccurateConstruction/Private/ConstructionManager.cpp"
 #include "D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Source/AccurateConstruction/Private/ConstructionProxy.cpp"
-#include "D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Source/AccurateConstruction/Private/GhostBuilding.cpp"

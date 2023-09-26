@@ -3,8 +3,8 @@
 	{
 		"Module.AccurateDistantPlan.cpp.obj": [
 			"AccurateDistantPlan.cpp.obj",
-			"LandscapeFragment.cpp.obj",
 			"DistantPlanActor.cpp.obj",
+			"LandscapeFragment.cpp.obj",
 			"SeasonLandscapeFragment.cpp.obj"
 		],
 		"Module.AccurateDistantPlan.gen.cpp.obj": [

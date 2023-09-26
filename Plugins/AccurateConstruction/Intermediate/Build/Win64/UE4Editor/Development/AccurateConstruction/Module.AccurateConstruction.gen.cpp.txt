@@ -15,4 +15,10 @@ D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Intermediate/Build/Win64/
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Source\AccurateConstruction/Public/GhostBuilding.h
 D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Materials/MaterialInstanceConstant.h
 D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MaterialInstanceConstant.generated.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetMathLibrary.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetMathLibrary.generated.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\KismetMathLibrary.inl
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+D:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Inc\AccurateConstruction\GhostBuilding.generated.h

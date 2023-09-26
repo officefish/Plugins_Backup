@@ -34,7 +34,8 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "D:\UnrealProjects\RTSGame\Intermediate\Build\Win64\RTSGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\AccurateConstruction.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Module.AccurateConstruction.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Module.AccurateConstruction.gen.cpp.obj"
 "D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Default.rc2.res"
 "D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
 "D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"

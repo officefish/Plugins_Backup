@@ -8,6 +8,9 @@
 #include "Engine/StaticMesh.h"
 #include "ConstructionManager.h"
 #include "Materials/MaterialInstanceConstant.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "Kismet/KismetSystemLibrary.h"
+#include "Engine/CollisionProfile.h"
 #include "GhostBuilding.generated.h"
 
 
@@ -46,6 +49,9 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (Category = "AccurateConstruction"))
 		void TickColor(bool Valid);
 
+	UFUNCTION(BlueprintPure, meta = (Category = "AccurateConstruction"))
+		bool SlopeCheck();
+
 public:
 
 	/**
@@ -64,6 +70,17 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
 		TSubclassOf<AConstructionProxy> ConstructionProxyClass;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
+		float SlopeTraceDistance;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
+		float MaxSlopeDifference;
+
+private:
+
+	float SlopeTrace(FVector TraceVector);
+
+
 private:
 
 	ABuildingMaster* CurrentGhostBuilding;
@@ -71,6 +88,8 @@ private:
 	UMaterial* GhostBuildingMaterial;
 	UMaterialInstanceConstant* ValidGostBuilding_MI;
 	UMaterialInstanceConstant* InvalidGhostBuilding_MI;
+
+	
 	/**
 	Delegates
 	*/

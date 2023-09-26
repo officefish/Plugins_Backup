@@ -10,8 +10,3 @@ D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Source/AccurateConstructi
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Source\AccurateConstruction\Public\ConstructionManager.h
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Inc\AccurateConstruction\ConstructionManager.generated.h
 D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Source/AccurateConstruction/Private/ConstructionProxy.cpp
-D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Source/AccurateConstruction/Private/GhostBuilding.cpp
-D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Source\AccurateConstruction\Public\GhostBuilding.h
-D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Materials/MaterialInstanceConstant.h
-D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MaterialInstanceConstant.generated.h
-D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Inc\AccurateConstruction\GhostBuilding.generated.h

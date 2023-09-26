@@ -24,6 +24,13 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
 	ACCURATECONSTRUCTION_API UClass* Z_Construct_UClass_AConstructionProxy_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AGhostBuilding::execSlopeCheck)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=P_THIS->SlopeCheck();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AGhostBuilding::execTickColor)
 	{
 		P_GET_UBOOL(Z_Param_Valid);
@@ -68,6 +75,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 			{ "GetConstructionRules", &AGhostBuilding::execGetConstructionRules },
 			{ "IsOverlappingActors", &AGhostBuilding::execIsOverlappingActors },
 			{ "KillGhost", &AGhostBuilding::execKillGhost },
+			{ "SlopeCheck", &AGhostBuilding::execSlopeCheck },
 			{ "SpawnGhost", &AGhostBuilding::execSpawnGhost },
 			{ "TickColor", &AGhostBuilding::execTickColor },
 		};
@@ -164,6 +172,44 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGhostBuilding_KillGhost_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics
+	{
+		struct GhostBuilding_eventSlopeCheck_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((GhostBuilding_eventSlopeCheck_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(GhostBuilding_eventSlopeCheck_Parms), &Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::Function_MetaDataParams[] = {
+		{ "Category", "AccurateConstruction" },
+		{ "ModuleRelativePath", "Public/GhostBuilding.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhostBuilding, nullptr, "SlopeCheck", nullptr, nullptr, sizeof(GhostBuilding_eventSlopeCheck_Parms), Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGhostBuilding_SlopeCheck()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGhostBuilding_SlopeCheck_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -265,6 +311,14 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ConstructionProxyClass_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ConstructionProxyClass;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SlopeTraceDistance_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SlopeTraceDistance;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxSlopeDifference_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxSlopeDifference;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -277,6 +331,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 		{ &Z_Construct_UFunction_AGhostBuilding_GetConstructionRules, "GetConstructionRules" }, // 1500827312
 		{ &Z_Construct_UFunction_AGhostBuilding_IsOverlappingActors, "IsOverlappingActors" }, // 2775865991
 		{ &Z_Construct_UFunction_AGhostBuilding_KillGhost, "KillGhost" }, // 2596216008
+		{ &Z_Construct_UFunction_AGhostBuilding_SlopeCheck, "SlopeCheck" }, // 2851189103
 		{ &Z_Construct_UFunction_AGhostBuilding_SpawnGhost, "SpawnGhost" }, // 808001493
 		{ &Z_Construct_UFunction_AGhostBuilding_TickColor, "TickColor" }, // 549863861
 	};
@@ -319,11 +374,27 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass = { "ConstructionProxyClass", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGhostBuilding, ConstructionProxyClass), Z_Construct_UClass_AConstructionProxy_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGhostBuilding_Statics::NewProp_SlopeTraceDistance_MetaData[] = {
+		{ "Category", "AccurateConstruction" },
+		{ "ModuleRelativePath", "Public/GhostBuilding.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGhostBuilding_Statics::NewProp_SlopeTraceDistance = { "SlopeTraceDistance", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGhostBuilding, SlopeTraceDistance), METADATA_PARAMS(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_SlopeTraceDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_SlopeTraceDistance_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGhostBuilding_Statics::NewProp_MaxSlopeDifference_MetaData[] = {
+		{ "Category", "AccurateConstruction" },
+		{ "ModuleRelativePath", "Public/GhostBuilding.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AGhostBuilding_Statics::NewProp_MaxSlopeDifference = { "MaxSlopeDifference", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGhostBuilding, MaxSlopeDifference), METADATA_PARAMS(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_MaxSlopeDifference_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_MaxSlopeDifference_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGhostBuilding_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_StaticMeshBase,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_DisplayMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_BuildingMasterClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_SlopeTraceDistance,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_MaxSlopeDifference,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGhostBuilding_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGhostBuilding>::IsAbstract,
@@ -352,7 +423,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGhostBuilding, 3670627056);
+	IMPLEMENT_CLASS(AGhostBuilding, 3010814277);
 	template<> ACCURATECONSTRUCTION_API UClass* StaticClass<AGhostBuilding>()
 	{
 		return AGhostBuilding::StaticClass();

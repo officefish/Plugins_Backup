@@ -10,6 +10,10 @@ AGhostBuilding::AGhostBuilding()
 	PrimaryActorTick.bCanEverTick = true;
 	bGenerateOverlapEventsDuringLevelStreaming = true;
 
+	SlopeTraceDistance = 1000.0f;
+	MaxSlopeDifference = 40.0f;
+
+
 	StaticMeshBase = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshBase"));
 	StaticMeshBase->SetCollisionResponseToAllChannels(ECR_Overlap);
 	RootComponent = StaticMeshBase;
@@ -111,6 +115,111 @@ void AGhostBuilding::TickColor(bool Valid)
 	else {
 		StaticMeshBase->SetMaterial(0, InvalidGhostBuilding_MI);
 	}
+
+	
+}
+
+float AGhostBuilding::SlopeTrace(FVector TraceVector)
+{
+	FVector TraceStart = TraceVector + FVector(0, 0, SlopeTraceDistance);
+	FVector TraceEnd = TraceVector - FVector(0, 0, SlopeTraceDistance);
+
+	FHitResult Hit;
+
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+
+	GetWorld()->LineTraceSingleByChannel(Hit, TraceStart, TraceEnd, ECC_GameTraceChannel1, QueryParams);
+
+	float LocationZ = this->GetActorLocation().Z;
+	float InpactZ = Hit.ImpactPoint.Z;
+
+	return LocationZ - InpactZ;
+
+}
+
+bool AGhostBuilding::SlopeCheck()
+{
+	FVector Origin;
+	FVector Extent;
+	this->GetActorBounds(true, Origin, Extent);
+
+	FVector Location = this->GetActorLocation();
+	FVector Forward = this->GetActorTransform().GetRotation().GetForwardVector();
+	FVector Right = this->GetActorTransform().GetRotation().GetRightVector();
+
+	TArray<float> Differences;
+
+	// Calculate Slope
+	FVector Vec1 = Forward + Right;
+	Vec1 *= Extent;
+	Vec1 += Location;
+	float Diff1 = SlopeTrace(Vec1);
+	Differences.Add(Diff1);
+
+	FVector Vec2 = (Forward * -1) + Right;
+	Vec2 *= Extent;
+	Vec2 += Location;
+	float Diff2 = SlopeTrace(Vec2);
+	Differences.Add(Diff2);
+
+	FVector Vec3 = (Forward) + (Right * -1);
+	Vec3 *= Extent;
+	Vec3 += Location;
+	float Diff3 = SlopeTrace(Vec3);
+	Differences.Add(Diff3);
+
+	FVector Vec4 = (Forward * -1)+ (Right * -1);
+	Vec4 *= Extent;
+	Vec4 += Location;
+	float Diff4 = SlopeTrace(Vec4);
+	Differences.Add(Diff4);
+
+	float LocDiff = SlopeTrace(Location);
+	Differences.Add(LocDiff);
+
+	int32 MinIndex;
+	float MinValue;
+
+	int32 MaxIndex;
+	float MaxValue;
+
+	UKismetMathLibrary::MinOfFloatArray(Differences, MinIndex, MinValue);
+	UKismetMathLibrary::MaxOfFloatArray(Differences, MaxIndex, MaxValue);
+
+	if (MinIndex > -1 && MaxIndex > -1)
+	{
+		FVector TraceStart = Location + FVector(0, 0, SlopeTraceDistance);
+		FVector TraceEnd = Location - FVector(0, 0, SlopeTraceDistance);
+		FVector HalfSize = FVector{Extent.X, Extent.Y, 0};
+		FRotator Orientation;
+
+		FHitResult Hit;
+
+		ECollisionChannel LandscapeChannel = ECC_GameTraceChannel1;
+
+		TArray<AActor*> ActorsToIgnore;
+
+		bool BoxTrace = UKismetSystemLibrary::BoxTraceSingle(GetWorld(),
+			TraceStart, TraceEnd, HalfSize, Orientation,
+			UEngineTypes::ConvertToTraceType(LandscapeChannel), false,
+			ActorsToIgnore, EDrawDebugTrace::None, Hit, true			
+		);
+
+		if (BoxTrace)
+		{
+			FVector NewLocation{ Location.X, Location.Y, Hit.ImpactPoint.Z };
+			this->SetActorLocation(NewLocation);
+		}
+	}
+
+	float MinValueAbs = UKismetMathLibrary::Abs(MinValue);
+	float MaxValueAbs = UKismetMathLibrary::Abs(MaxValue);
+
+	bool bBadLocation = (MaxValueAbs >= MaxSlopeDifference)
+		|| (MinValueAbs >= MaxSlopeDifference);
+
+	return bBadLocation;
 }
 
 

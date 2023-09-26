@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\UnrealProjects\RTSGame\Intermediate\Build\Win64\RTSGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\UnrealProjects\RTSGame\Plugins\CultureGameState\Intermediate\Build\Win64\UE4Editor\Development\CultureGameState\CultureGameStateBase.cpp.obj"
 "D:\UnrealProjects\RTSGame\Plugins\CultureGameState\Intermediate\Build\Win64\UE4Editor\Development\CultureGameState\Module.CultureGameState.cpp.obj"
 "D:\UnrealProjects\RTSGame\Plugins\CultureGameState\Intermediate\Build\Win64\UE4Editor\Development\CultureGameState\Module.CultureGameState.gen.cpp.obj"
 "D:\UnrealProjects\RTSGame\Plugins\CultureGameState\Intermediate\Build\Win64\UE4Editor\Development\CultureGameState\Default.rc2.res"
