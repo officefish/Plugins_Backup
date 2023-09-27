@@ -38,6 +38,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (Category = "AccurateConstruction"))
 		UStaticMesh* DisplayMesh;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
+		FTimespan TimeRequired;
+
 private:
 
 	void SetupDefaults();

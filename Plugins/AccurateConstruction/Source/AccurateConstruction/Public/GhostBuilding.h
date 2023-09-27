@@ -71,6 +71,9 @@ public:
 		TSubclassOf<AConstructionProxy> ConstructionProxyClass;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
+		FTimespan TimeRequired;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
 		float SlopeTraceDistance;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))

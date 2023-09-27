@@ -11,7 +11,6 @@
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeAccurateConstruction_init() {}
-	ACCURATECONSTRUCTION_API UFunction* Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature();
 	ACCURATECONSTRUCTION_API UFunction* Z_Construct_UDelegateFunction_AccurateConstruction_ConstuctionCompleteDelegate__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_AccurateConstruction()
 	{
@@ -19,7 +18,6 @@ void EmptyLinkFunctionForGeneratedCodeAccurateConstruction_init() {}
 		if (!ReturnPackage)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
-				(UObject* (*)())Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_AccurateConstruction_ConstuctionCompleteDelegate__DelegateSignature,
 			};
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
@@ -27,8 +25,8 @@ void EmptyLinkFunctionForGeneratedCodeAccurateConstruction_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x51ACE4C4,
-				0x73A65BAE,
+				0x9F421AEA,
+				0xCD05D93F,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

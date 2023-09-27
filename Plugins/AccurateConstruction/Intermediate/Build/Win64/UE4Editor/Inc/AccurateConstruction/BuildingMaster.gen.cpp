@@ -22,6 +22,7 @@ void EmptyLinkFunctionForGeneratedCodeBuildingMaster() {}
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ACCURATECONSTRUCTION_API UClass* Z_Construct_UClass_AConstructionProxy_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTimespan();
 // End Cross Module References
 	void ABuildingMaster::StaticRegisterNativesABuildingMaster()
 	{
@@ -52,6 +53,10 @@ void EmptyLinkFunctionForGeneratedCodeBuildingMaster() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DisplayMesh_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DisplayMesh;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TimeRequired_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TimeRequired;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -98,11 +103,19 @@ void EmptyLinkFunctionForGeneratedCodeBuildingMaster() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABuildingMaster_Statics::NewProp_DisplayMesh = { "DisplayMesh", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABuildingMaster, DisplayMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABuildingMaster_Statics::NewProp_DisplayMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABuildingMaster_Statics::NewProp_DisplayMesh_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABuildingMaster_Statics::NewProp_TimeRequired_MetaData[] = {
+		{ "Category", "AccurateConstruction" },
+		{ "ModuleRelativePath", "Public/BuildingMaster.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABuildingMaster_Statics::NewProp_TimeRequired = { "TimeRequired", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABuildingMaster, TimeRequired), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UClass_ABuildingMaster_Statics::NewProp_TimeRequired_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABuildingMaster_Statics::NewProp_TimeRequired_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABuildingMaster_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABuildingMaster_Statics::NewProp_Scene,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABuildingMaster_Statics::NewProp_StaticMeshBase,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABuildingMaster_Statics::NewProp_ConstructionProxyClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABuildingMaster_Statics::NewProp_DisplayMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABuildingMaster_Statics::NewProp_TimeRequired,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABuildingMaster_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABuildingMaster>::IsAbstract,
@@ -131,7 +144,7 @@ void EmptyLinkFunctionForGeneratedCodeBuildingMaster() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABuildingMaster, 2830192884);
+	IMPLEMENT_CLASS(ABuildingMaster, 2307521406);
 	template<> ACCURATECONSTRUCTION_API UClass* StaticClass<ABuildingMaster>()
 	{
 		return ABuildingMaster::StaticClass();

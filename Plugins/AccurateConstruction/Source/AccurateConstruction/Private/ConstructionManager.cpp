@@ -91,7 +91,7 @@ void AConstructionManager::RegisterBuildings()
 	}
 }
 
-void AConstructionManager::QueueConstruction(FConstructionRules Rules)
+void AConstructionManager::QueueConstruction(FConstructionRules Rules, FDateTime CurrentDateTime)
 {
 	UE_LOG(LogTemp, Warning,
 		TEXT("ConstructionManager::QueueConstruction"));
@@ -108,14 +108,36 @@ void AConstructionManager::QueueConstruction(FConstructionRules Rules)
 		AConstructionProxy* Proxy = GetWorld()->SpawnActor<AConstructionProxy>(Rules.ConstructionProxyClass,
 			Location, Rotation, SpawnInfo);
 
+		Proxy->SetDisplayMesh(Rules.DisplayMesh);
+
+		FDateTime ConstructionCompleteTime = CurrentDateTime + Rules.TimeRequired;
+
 		FConstructionQueue Queue;
 		Queue.Proxy = Proxy;
 		Queue.Rules = Rules;
+		Queue.ConstructionCompleteTime = ConstructionCompleteTime;
+
+		FString ConstructionCompleteTimeStr = ConstructionCompleteTime.ToString(TEXT("%Y.%m.%d-%H.%M.%S"));
+		UE_LOG(LogTemp, Warning, TEXT("ConstructionCompleteTime: %s"), *ConstructionCompleteTimeStr);
 
 		Queues.Add(Queue);
 
-		// Dispatch event with proxy
-		OnConstructionCompleteDelegate.Broadcast(Queue);
+		
+	}
+}
+
+void AConstructionManager::ConstructionTimeCheck(FDateTime CurrentDateTime)
+{
+	//FConstructionQueue CurrentQueue;
+
+	for (FConstructionQueue Queue : Queues)
+	{
+		if (Queue.ConstructionCompleteTime <= CurrentDateTime)
+		{
+			// Dispatch event with proxy
+			OnConstructionCompleteDelegate.Broadcast(Queue);
+			break;
+		};
 	}
 }
 

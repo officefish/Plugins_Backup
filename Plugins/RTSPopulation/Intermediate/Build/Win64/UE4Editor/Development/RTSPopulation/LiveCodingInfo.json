@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RTSPopulation.cpp.obj": [
+			"RandomCharacterFunctionLibrary.cpp.obj",
+			"RTSCharacter.cpp.obj",
+			"RTSPopulation.cpp.obj"
+		],
+		"Module.RTSPopulation.gen.cpp.obj": [
+			"RandomCharacterFunctionLibrary.gen.cpp.obj",
+			"RTSCharacter.gen.cpp.obj",
+			"RTSPopulation.init.gen.cpp.obj"
+		]
+	}
+}

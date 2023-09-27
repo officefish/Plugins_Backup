@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-RTSPopulation-0002.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\UnrealProjects\RTSGame\Intermediate\Build\Win64\RTSGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\UnrealProjects\RTSGame\Plugins\RTSPopulation\Intermediate\Build\Win64\UE4Editor\Development\RTSPopulation\Module.RTSPopulation.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\RTSPopulation\Intermediate\Build\Win64\UE4Editor\Development\RTSPopulation\Module.RTSPopulation.gen.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\RTSPopulation\Intermediate\Build\Win64\UE4Editor\Development\RTSPopulation\Default.rc2.res"
+/OUT:"D:\UnrealProjects\RTSGame\Plugins\RTSPopulation\Intermediate\Build\Win64\UE4Editor\Development\RTSPopulation\UE4Editor-RTSPopulation-0002.lib"

@@ -1,0 +1,2 @@
+D:\UnrealProjects\RTSGame\Plugins\RTSPopulation\Intermediate\Build\Win64\UE4Editor\Development\RTSPopulation\Definitions.RTSPopulation.h
+D:\UnrealProjects\RTSGame\Plugins\RTSPopulation\Source\RTSPopulation\Public\RTSPopulation.h

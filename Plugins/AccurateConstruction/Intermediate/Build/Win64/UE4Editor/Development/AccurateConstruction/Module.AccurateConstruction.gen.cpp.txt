@@ -5,6 +5,8 @@ D:\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Intermediate/Build/Win64/UE4Editor/Inc/AccurateConstruction/BuildingMaster.gen.cpp
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Source\AccurateConstruction/Public/BuildingMaster.h
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Source\AccurateConstruction\Public\ConstructionProxy.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Materials/MaterialInstanceConstant.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MaterialInstanceConstant.generated.h
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Inc\AccurateConstruction\ConstructionProxy.generated.h
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Inc\AccurateConstruction\BuildingMaster.generated.h
 D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Intermediate/Build/Win64/UE4Editor/Inc/AccurateConstruction/ConstructionManager.gen.cpp
@@ -13,8 +15,6 @@ D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\
 D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Intermediate/Build/Win64/UE4Editor/Inc/AccurateConstruction/ConstructionProxy.gen.cpp
 D:/UnrealProjects/RTSGame/Plugins/AccurateConstruction/Intermediate/Build/Win64/UE4Editor/Inc/AccurateConstruction/GhostBuilding.gen.cpp
 D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Source\AccurateConstruction/Public/GhostBuilding.h
-D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Materials/MaterialInstanceConstant.h
-D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MaterialInstanceConstant.generated.h
 D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetMathLibrary.h
 D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetMathLibrary.generated.h
 D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\KismetMathLibrary.inl

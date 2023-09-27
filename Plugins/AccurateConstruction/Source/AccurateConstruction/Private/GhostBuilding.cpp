@@ -13,7 +13,6 @@ AGhostBuilding::AGhostBuilding()
 	SlopeTraceDistance = 1000.0f;
 	MaxSlopeDifference = 40.0f;
 
-
 	StaticMeshBase = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshBase"));
 	StaticMeshBase->SetCollisionResponseToAllChannels(ECR_Overlap);
 	RootComponent = StaticMeshBase;
@@ -63,6 +62,7 @@ void AGhostBuilding::SpawnGhost(
 		BuildingMasterClass = MasterClass;
 		ConstructionProxyClass = CurrentGhostBuilding->ConstructionProxyClass;
 		DisplayMesh = CurrentGhostBuilding->DisplayMesh;
+		TimeRequired = CurrentGhostBuilding->TimeRequired;
 
 		StaticMeshBase->SetStaticMesh(DisplayMesh);
 		StaticMeshBase->RegisterComponent();
@@ -94,7 +94,7 @@ FConstructionRules AGhostBuilding::GetConstructionRules()
 	Rules.Transform = this->GetActorTransform();
 
 	int32 Hour = 4;
-	Rules.TimeRequired = FTimespan{ Hour, 0, 0 };
+	Rules.TimeRequired = TimeRequired;
 	
 	return Rules;
 }

@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructionManager() {}
 	ACCURATECONSTRUCTION_API UEnum* Z_Construct_UEnum_AccurateConstruction_EEBuildingCategory();
 	ACCURATECONSTRUCTION_API UClass* Z_Construct_UClass_AConstructionProxy_NoRegister();
 	ACCURATECONSTRUCTION_API UScriptStruct* Z_Construct_UScriptStruct_FConstructionRules();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FDateTime();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ACCURATECONSTRUCTION_API UClass* Z_Construct_UClass_ABuildingMaster_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTransform();
@@ -167,6 +168,10 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Rules_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Rules;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ConstructionCompleteTime_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ConstructionCompleteTime;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -194,9 +199,17 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_Rules = { "Rules", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FConstructionQueue, Rules), Z_Construct_UScriptStruct_FConstructionRules, METADATA_PARAMS(Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_Rules_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_Rules_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_ConstructionCompleteTime_MetaData[] = {
+		{ "Category", "AccurateConstruction" },
+		{ "ModuleRelativePath", "Public/ConstructionManager.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_ConstructionCompleteTime = { "ConstructionCompleteTime", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FConstructionQueue, ConstructionCompleteTime), Z_Construct_UScriptStruct_FDateTime, METADATA_PARAMS(Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_ConstructionCompleteTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_ConstructionCompleteTime_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FConstructionQueue_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_Proxy,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_Rules,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FConstructionQueue_Statics::NewProp_ConstructionCompleteTime,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FConstructionQueue_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_AccurateConstruction,
@@ -226,7 +239,7 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FConstructionQueue_Hash() { return 1274473601U; }
+	uint32 Get_Z_Construct_UScriptStruct_FConstructionQueue_Hash() { return 1042243160U; }
 class UScriptStruct* FConstructionRules::StaticStruct()
 {
 	static class UScriptStruct* Singleton = NULL;
@@ -359,6 +372,14 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 		return ReturnStruct;
 	}
 	uint32 Get_Z_Construct_UScriptStruct_FConstructionRules_Hash() { return 1390747061U; }
+	DEFINE_FUNCTION(AConstructionManager::execConstructionTimeCheck)
+	{
+		P_GET_STRUCT(FDateTime,Z_Param_CurrentDateTime);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ConstructionTimeCheck(Z_Param_CurrentDateTime);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AConstructionManager::execOnConstructionComplete)
 	{
 		P_GET_STRUCT(FConstructionQueue,Z_Param_Queue);
@@ -386,22 +407,57 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 	}
 	DEFINE_FUNCTION(AConstructionManager::execQueueConstruction)
 	{
-		P_GET_STRUCT(FConstructionRules,Z_Param_ConstructionData);
+		P_GET_STRUCT(FConstructionRules,Z_Param_Rules);
+		P_GET_STRUCT(FDateTime,Z_Param_CurrentDateTime);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->QueueConstruction(Z_Param_ConstructionData);
+		P_THIS->QueueConstruction(Z_Param_Rules,Z_Param_CurrentDateTime);
 		P_NATIVE_END;
 	}
 	void AConstructionManager::StaticRegisterNativesAConstructionManager()
 	{
 		UClass* Class = AConstructionManager::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "ConstructionTimeCheck", &AConstructionManager::execConstructionTimeCheck },
 			{ "FinishConstruction", &AConstructionManager::execFinishConstruction },
 			{ "GetBuildingMasterClass", &AConstructionManager::execGetBuildingMasterClass },
 			{ "OnConstructionComplete", &AConstructionManager::execOnConstructionComplete },
 			{ "QueueConstruction", &AConstructionManager::execQueueConstruction },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics
+	{
+		struct ConstructionManager_eventConstructionTimeCheck_Parms
+		{
+			FDateTime CurrentDateTime;
+		};
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CurrentDateTime;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::NewProp_CurrentDateTime = { "CurrentDateTime", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ConstructionManager_eventConstructionTimeCheck_Parms, CurrentDateTime), Z_Construct_UScriptStruct_FDateTime, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::NewProp_CurrentDateTime,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::Function_MetaDataParams[] = {
+		{ "Category", "AccurateConstruction" },
+		{ "ModuleRelativePath", "Public/ConstructionManager.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AConstructionManager, nullptr, "ConstructionTimeCheck", nullptr, nullptr, sizeof(ConstructionManager_eventConstructionTimeCheck_Parms), Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AConstructionManager_FinishConstruction_Statics
 	{
@@ -514,18 +570,22 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 	{
 		struct ConstructionManager_eventQueueConstruction_Parms
 		{
-			FConstructionRules ConstructionData;
+			FConstructionRules Rules;
+			FDateTime CurrentDateTime;
 		};
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ConstructionData;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Rules;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_CurrentDateTime;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::NewProp_ConstructionData = { "ConstructionData", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ConstructionManager_eventQueueConstruction_Parms, ConstructionData), Z_Construct_UScriptStruct_FConstructionRules, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::NewProp_Rules = { "Rules", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ConstructionManager_eventQueueConstruction_Parms, Rules), Z_Construct_UScriptStruct_FConstructionRules, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::NewProp_CurrentDateTime = { "CurrentDateTime", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ConstructionManager_eventQueueConstruction_Parms, CurrentDateTime), Z_Construct_UScriptStruct_FDateTime, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::NewProp_ConstructionData,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::NewProp_Rules,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::NewProp_CurrentDateTime,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::Function_MetaDataParams[] = {
@@ -533,7 +593,7 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 		{ "ModuleRelativePath", "Public/ConstructionManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AConstructionManager, nullptr, "QueueConstruction", nullptr, nullptr, sizeof(ConstructionManager_eventQueueConstruction_Parms), Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AConstructionManager, nullptr, "QueueConstruction", nullptr, nullptr, sizeof(ConstructionManager_eventQueueConstruction_Parms), Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionManager_QueueConstruction_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AConstructionManager_QueueConstruction()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -567,10 +627,11 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 		(UObject* (*)())Z_Construct_UPackage__Script_AccurateConstruction,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AConstructionManager_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AConstructionManager_ConstructionTimeCheck, "ConstructionTimeCheck" }, // 780335113
 		{ &Z_Construct_UFunction_AConstructionManager_FinishConstruction, "FinishConstruction" }, // 2040125147
 		{ &Z_Construct_UFunction_AConstructionManager_GetBuildingMasterClass, "GetBuildingMasterClass" }, // 4229283724
 		{ &Z_Construct_UFunction_AConstructionManager_OnConstructionComplete, "OnConstructionComplete" }, // 1468129145
-		{ &Z_Construct_UFunction_AConstructionManager_QueueConstruction, "QueueConstruction" }, // 3976107994
+		{ &Z_Construct_UFunction_AConstructionManager_QueueConstruction, "QueueConstruction" }, // 435177396
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AConstructionManager_Statics::Class_MetaDataParams[] = {
@@ -615,7 +676,7 @@ static struct FScriptStruct_AccurateConstruction_StaticRegisterNativesFConstruct
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AConstructionManager, 3723722392);
+	IMPLEMENT_CLASS(AConstructionManager, 2881745348);
 	template<> ACCURATECONSTRUCTION_API UClass* StaticClass<AConstructionManager>()
 	{
 		return AConstructionManager::StaticClass();

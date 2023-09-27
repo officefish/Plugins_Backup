@@ -7,46 +7,26 @@
 AConstructionProxy::AConstructionProxy()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
-	// Setup default values for class fields
-	SetupDefaults();
+	StaticMeshBase = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshBase"));
+	StaticMeshBase->SetCollisionResponseToAllChannels(ECR_Overlap);
+	RootComponent = StaticMeshBase;
+	StaticMeshBase->SetMobility(EComponentMobility::Movable);
 
-	// Construct Subobjects
-	ConstructSubObjects();
+	static ConstructorHelpers::FObjectFinder<UMaterialInstanceConstant> InProgress_MI_Finder(
+		TEXT("MaterialInstanceConstant'/AccurateConstruction/Materials/InProgress_MI.InProgress_MI'"));
 
-}
-
-void AConstructionProxy::SetupDefaults()
-{
-	bIsConstructionCompleted = false;
-}
-
-
-void AConstructionProxy::ConstructSubObjects()
-{
-	Scene = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
-
-	RootComponent = Scene;
-}
-
-// Called when the game starts or when spawned
-void AConstructionProxy::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void AConstructionProxy::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-	if (!bIsConstructionCompleted)
+	if (InProgress_MI_Finder.Succeeded())
 	{
-		OnConstructionCompleteDelegate.Broadcast(this);
-		bIsConstructionCompleted = true;
+		InProgress_MI = InProgress_MI_Finder.Object;
 	}
+}
 
+void AConstructionProxy::SetDisplayMesh(UStaticMesh* DisplayMesh)
+{
+	StaticMeshBase->SetStaticMesh(DisplayMesh);
+	StaticMeshBase->RegisterComponent();
+	StaticMeshBase->SetMaterial(0, InProgress_MI);
 }
 

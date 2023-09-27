@@ -72,6 +72,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
 		FConstructionRules Rules;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (Category = "AccurateConstruction"))
+		FDateTime ConstructionCompleteTime;
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FConstuctionCompleteDelegate, FConstructionQueue, Queue);
@@ -92,7 +95,7 @@ public:
 public:
 
 	UFUNCTION(BlueprintCallable, Category = "AccurateConstruction")
-		void QueueConstruction(FConstructionRules ConstructionData);
+		void QueueConstruction(FConstructionRules Rules, FDateTime CurrentDateTime);
 
 	UFUNCTION(BlueprintCallable, Category = "AccurateConstruction")
 		void FinishConstruction(FConstructionQueue Queue);
@@ -102,6 +105,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "AccurateConstruction")
 	    void OnConstructionComplete(FConstructionQueue Queue);
+
+	UFUNCTION(BlueprintCallable, Category = "AccurateConstruction")
+		void ConstructionTimeCheck(FDateTime CurrentDateTime);
 
 public:
 

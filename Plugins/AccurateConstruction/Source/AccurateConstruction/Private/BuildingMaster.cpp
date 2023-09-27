@@ -28,6 +28,8 @@ ABuildingMaster::ABuildingMaster()
 void ABuildingMaster::SetupDefaults()
 {
 	ConstructionProxyClass = AConstructionProxy::StaticClass();
+	/* Default Construction TimeRequired */
+	TimeRequired = FTimespan(4, 0, 0);
 }
 
 void ABuildingMaster::ConstructSubObjects()

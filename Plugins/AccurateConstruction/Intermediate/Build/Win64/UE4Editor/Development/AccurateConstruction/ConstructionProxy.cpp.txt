@@ -1,0 +1,5 @@
+D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Definitions.AccurateConstruction.h
+D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Source\AccurateConstruction\Public\ConstructionProxy.h
+D:\UE_4.27\Engine\Source\Runtime\Engine\Classes\Materials/MaterialInstanceConstant.h
+D:\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MaterialInstanceConstant.generated.h
+D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Inc\AccurateConstruction\ConstructionProxy.generated.h

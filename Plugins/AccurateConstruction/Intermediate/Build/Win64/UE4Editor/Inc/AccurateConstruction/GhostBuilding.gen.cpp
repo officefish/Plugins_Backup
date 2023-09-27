@@ -23,6 +23,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
 	ACCURATECONSTRUCTION_API UClass* Z_Construct_UClass_AConstructionProxy_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FTimespan();
 // End Cross Module References
 	DEFINE_FUNCTION(AGhostBuilding::execSlopeCheck)
 	{
@@ -312,6 +313,10 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 #endif
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ConstructionProxyClass;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TimeRequired_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_TimeRequired;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SlopeTraceDistance_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SlopeTraceDistance;
@@ -375,6 +380,13 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass = { "ConstructionProxyClass", nullptr, (EPropertyFlags)0x0014000000000005, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGhostBuilding, ConstructionProxyClass), Z_Construct_UClass_AConstructionProxy_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGhostBuilding_Statics::NewProp_TimeRequired_MetaData[] = {
+		{ "Category", "AccurateConstruction" },
+		{ "ModuleRelativePath", "Public/GhostBuilding.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AGhostBuilding_Statics::NewProp_TimeRequired = { "TimeRequired", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGhostBuilding, TimeRequired), Z_Construct_UScriptStruct_FTimespan, METADATA_PARAMS(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_TimeRequired_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGhostBuilding_Statics::NewProp_TimeRequired_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGhostBuilding_Statics::NewProp_SlopeTraceDistance_MetaData[] = {
 		{ "Category", "AccurateConstruction" },
 		{ "ModuleRelativePath", "Public/GhostBuilding.h" },
@@ -393,6 +405,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_DisplayMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_BuildingMasterClass,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_ConstructionProxyClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_TimeRequired,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_SlopeTraceDistance,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhostBuilding_Statics::NewProp_MaxSlopeDifference,
 	};
@@ -423,7 +436,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBuilding() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGhostBuilding, 3010814277);
+	IMPLEMENT_CLASS(AGhostBuilding, 1102918881);
 	template<> ACCURATECONSTRUCTION_API UClass* StaticClass<AGhostBuilding>()
 	{
 		return AGhostBuilding::StaticClass();

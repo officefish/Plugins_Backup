@@ -34,6 +34,9 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "D:\UnrealProjects\RTSGame\Intermediate\Build\Win64\RTSGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\ConstructionManager.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\ConstructionProxy.cpp.obj"
+"D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\GhostBuilding.cpp.obj"
 "D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Module.AccurateConstruction.cpp.obj"
 "D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Module.AccurateConstruction.gen.cpp.obj"
 "D:\UnrealProjects\RTSGame\Plugins\AccurateConstruction\Intermediate\Build\Win64\UE4Editor\Development\AccurateConstruction\Default.rc2.res"

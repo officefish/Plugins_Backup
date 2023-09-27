@@ -13,47 +13,61 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeConstructionProxy() {}
 // Cross Module References
-	ACCURATECONSTRUCTION_API UFunction* Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature();
-	UPackage* Z_Construct_UPackage__Script_AccurateConstruction();
 	ACCURATECONSTRUCTION_API UClass* Z_Construct_UClass_AConstructionProxy_NoRegister();
 	ACCURATECONSTRUCTION_API UClass* Z_Construct_UClass_AConstructionProxy();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
-	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+	UPackage* Z_Construct_UPackage__Script_AccurateConstruction();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMesh_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
-	struct Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics
+	DEFINE_FUNCTION(AConstructionProxy::execSetDisplayMesh)
 	{
-		struct _Script_AccurateConstruction_eventConstructionCompleteDelegate_Parms
-		{
-			AConstructionProxy* Proxy;
+		P_GET_OBJECT(UStaticMesh,Z_Param_DisplayMesh);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetDisplayMesh(Z_Param_DisplayMesh);
+		P_NATIVE_END;
+	}
+	void AConstructionProxy::StaticRegisterNativesAConstructionProxy()
+	{
+		UClass* Class = AConstructionProxy::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "SetDisplayMesh", &AConstructionProxy::execSetDisplayMesh },
 		};
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Proxy;
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics
+	{
+		struct ConstructionProxy_eventSetDisplayMesh_Parms
+		{
+			UStaticMesh* DisplayMesh;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DisplayMesh;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::NewProp_Proxy = { "Proxy", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(_Script_AccurateConstruction_eventConstructionCompleteDelegate_Parms, Proxy), Z_Construct_UClass_AConstructionProxy_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::NewProp_Proxy,
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::NewProp_DisplayMesh = { "DisplayMesh", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ConstructionProxy_eventSetDisplayMesh_Parms, DisplayMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::NewProp_DisplayMesh,
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::Function_MetaDataParams[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::Function_MetaDataParams[] = {
+		{ "Category", "AccurateConstruction" },
 		{ "ModuleRelativePath", "Public/ConstructionProxy.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_AccurateConstruction, nullptr, "ConstructionCompleteDelegate__DelegateSignature", nullptr, nullptr, sizeof(_Script_AccurateConstruction_eventConstructionCompleteDelegate_Parms), Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature()
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AConstructionProxy, nullptr, "SetDisplayMesh", nullptr, nullptr, sizeof(ConstructionProxy_eventSetDisplayMesh_Parms), Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature_Statics::FuncParams);
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh_Statics::FuncParams);
 		}
 		return ReturnFunction;
-	}
-	void AConstructionProxy::StaticRegisterNativesAConstructionProxy()
-	{
 	}
 	UClass* Z_Construct_UClass_AConstructionProxy_NoRegister()
 	{
@@ -62,17 +76,14 @@ void EmptyLinkFunctionForGeneratedCodeConstructionProxy() {}
 	struct Z_Construct_UClass_AConstructionProxy_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Scene_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StaticMeshBase_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Scene;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OnConstructionCompleteDelegate_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnConstructionCompleteDelegate;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_StaticMeshBase;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -81,6 +92,9 @@ void EmptyLinkFunctionForGeneratedCodeConstructionProxy() {}
 		(UObject* (*)())Z_Construct_UClass_AActor,
 		(UObject* (*)())Z_Construct_UPackage__Script_AccurateConstruction,
 	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AConstructionProxy_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AConstructionProxy_SetDisplayMesh, "SetDisplayMesh" }, // 107096590
+	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AConstructionProxy_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "ConstructionProxy.h" },
@@ -88,7 +102,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructionProxy() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AConstructionProxy_Statics::NewProp_Scene_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AConstructionProxy_Statics::NewProp_StaticMeshBase_MetaData[] = {
 		{ "Category", "AccurateConstruction" },
 		{ "Comment", "/**\n\x09 Components\n\x09*/" },
 		{ "EditInline", "true" },
@@ -96,19 +110,9 @@ void EmptyLinkFunctionForGeneratedCodeConstructionProxy() {}
 		{ "ToolTip", "Components" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AConstructionProxy_Statics::NewProp_Scene = { "Scene", nullptr, (EPropertyFlags)0x001000040008000c, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AConstructionProxy, Scene), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AConstructionProxy_Statics::NewProp_Scene_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AConstructionProxy_Statics::NewProp_Scene_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AConstructionProxy_Statics::NewProp_OnConstructionCompleteDelegate_MetaData[] = {
-		{ "Category", "AccurateConstruction" },
-		{ "Comment", "// Delegates\n" },
-		{ "ModuleRelativePath", "Public/ConstructionProxy.h" },
-		{ "ToolTip", "Delegates" },
-	};
-#endif
-	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_AConstructionProxy_Statics::NewProp_OnConstructionCompleteDelegate = { "OnConstructionCompleteDelegate", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AConstructionProxy, OnConstructionCompleteDelegate), Z_Construct_UDelegateFunction_AccurateConstruction_ConstructionCompleteDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_AConstructionProxy_Statics::NewProp_OnConstructionCompleteDelegate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AConstructionProxy_Statics::NewProp_OnConstructionCompleteDelegate_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AConstructionProxy_Statics::NewProp_StaticMeshBase = { "StaticMeshBase", nullptr, (EPropertyFlags)0x001000040008000c, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AConstructionProxy, StaticMeshBase), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AConstructionProxy_Statics::NewProp_StaticMeshBase_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AConstructionProxy_Statics::NewProp_StaticMeshBase_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AConstructionProxy_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AConstructionProxy_Statics::NewProp_Scene,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AConstructionProxy_Statics::NewProp_OnConstructionCompleteDelegate,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AConstructionProxy_Statics::NewProp_StaticMeshBase,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AConstructionProxy_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AConstructionProxy>::IsAbstract,
@@ -118,11 +122,11 @@ void EmptyLinkFunctionForGeneratedCodeConstructionProxy() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AConstructionProxy_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AConstructionProxy_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -137,7 +141,7 @@ void EmptyLinkFunctionForGeneratedCodeConstructionProxy() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AConstructionProxy, 2892208382);
+	IMPLEMENT_CLASS(AConstructionProxy, 4227808657);
 	template<> ACCURATECONSTRUCTION_API UClass* StaticClass<AConstructionProxy>()
 	{
 		return AConstructionProxy::StaticClass();
